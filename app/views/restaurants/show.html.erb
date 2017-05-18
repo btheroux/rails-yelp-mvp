@@ -1,0 +1,40 @@
+<div class="text-center">
+  <h1>
+    <strong>Name:</strong>
+    <%= @restaurant.name %>
+  </h1>
+
+  <h3>
+    <strong>Category:</strong>
+    <%= @restaurant.category %>
+  </h3>
+
+  <p>
+    <strong>Address:</strong>
+    <%= @restaurant.address %>
+  </p>
+
+  <p>
+    <strong>Phone Number:</strong>
+    <%= @restaurant.phone_number %>
+  </p>
+
+  <h2>Reviews</h2>
+
+  <ul>
+    <% @restaurant.reviews.each do |review| %>
+      <li>
+        <strong>Rating:</strong>
+        <%= review.rating %>
+        <br>
+        <strong>Content:</strong>
+        <%= review.content %>
+      </li>
+    <% end %>
+
+  </ul>
+
+  <%= link_to 'Create a Review', new_restaurant_review_path(@restaurant), class: "btn btn-success" %>
+
+  <%= link_to 'Back', restaurants_path, class: "btn btn-primary" %>
+</div>
